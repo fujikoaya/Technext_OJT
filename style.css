@@ -48,17 +48,55 @@ h1{
 }
 .article-wrap{
     width: 320px;
+    transition: all .3s;
+}
+.article-wrap:hover{
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1) ;
+    border-color: transparent;
 }
 p{
     padding: 5px 15px;
 }
+
 .readmore{
+    position: relative;
     text-align: right;
-    padding: 100px 0 20px;
+    padding: 100px 17px 0 0;
+    width: 100%;
+}
+/* マウスオーバーしたら影が出るアニメーション */
+span:after{
+    content: '';
+  position: absolute;
+  left: 90%;
+  bottom: -10px;/*線の上下位置*/
+  display: inline-block;
+  width: 25px;/*線の長さ*/
+  height: 1px;/*線の太さ*/
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);/*位置調整*/
+  background-color: black;/*線の色*/
+  border-radius: 2px;/*線の丸み*/
+
 }
 .readmore1{
+    position: relative;
     text-align: right;
-    padding: 78px 0 20px;
+    padding: 76px 17px 0 0;
+} 
+/* マウスオーバーしたら影が出るアニメーション */
+.readmore1:after{
+    content: '';
+  position: absolute;
+  left: 90%;
+  bottom: -10px;/*線の上下位置*/
+  display: inline-block;
+  width: 25px;/*線の長さ*/
+  height: 1px;/*線の太さ*/
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);/*位置調整*/
+  background-color: black;/*線の色*/
+  border-radius: 2px;/*線の丸み*/
 }
 .main-titile{
     max-width: 1024px;
