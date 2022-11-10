@@ -1,0 +1,348 @@
+// ブレイクポイント
+$sp: 767px;
+// レイアウト幅
+$pc: 1152px;
+
+// レスポンシブ
+@mixin sp {
+    @media screen and (max-width:$sp) {
+        @content;
+
+    }
+}
+
+// ブログ記事img
+// SP
+$col2: 80%;
+// PC
+$col3: 30%;
+
+header {
+    @include sp {
+        position: fixed;
+        z-index: 2;
+        background-color: white;
+        width: 100%;
+        border-bottom: ridge;
+    }
+
+    .logo {
+        display: none;
+
+        @include sp {
+            display: block;
+            width: 25%;
+            margin: 10px auto;
+            z-index: 3;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .nav {
+        .nav-list {
+            display: flex;
+            justify-content: end;
+            padding: 70px 0;
+
+        }
+
+        .nav-item {
+            padding-right: 50px;
+
+        }
+    }
+}
+
+// sp時ハンバーガーメニュー
+@include sp {
+    header {
+        .nav {
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: 0;
+                z-index: -1;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                opacity: 0;
+            }
+
+            .nav-item {
+                width: 100%;
+                height: auto;
+                padding: .5em 1em;
+                text-align: center;
+                color: black;
+                box-sizing: border-box;
+            }
+
+            /*----------------------------
+* アニメーション部分
+*----------------------------*/
+
+            /* アニメーション前のメニューの状態 */
+            .nav-list {
+                transform: translateX(-100vw);
+                transition: all .3s linear;
+            }
+
+            /* アニメーション後のメニューの状態 */
+            .nav-list.is-active {
+                transform: translateY(0);
+                opacity: 90%;
+            }
+
+            /* ハンバーガーアニメーション */
+            .menu-trigger,
+            .menu-trigger span {
+                display: inline-block;
+                transition: all .4s;
+                box-sizing: border-box;
+            }
+
+            .menu-trigger {
+                position: fixed;
+                top: 70px;
+                margin-right: 20px;
+                right: 10px;
+                z-index: 2;
+                width: 24px;
+                height: 32px;
+                background: none;
+                border: none;
+                appearance: none;
+                cursor: pointer;
+            }
+
+            .menu-trigger span {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: gray;
+                border-radius: 4px;
+            }
+
+            .menu-trigger span:nth-of-type(1) {
+                top: 0px;
+            }
+
+            .menu-trigger span:nth-of-type(2) {
+                top: 9px;
+            }
+
+            .menu-trigger span:nth-of-type(3) {
+                bottom: 11px;
+            }
+
+            /* ここからハンバーガーメニューのアニメーション */
+            .menu-trigger span:nth-of-type(1) {
+                animation: menu-bar01 .5s forwards;
+            }
+
+            @keyframes menu-bar01 {
+                0% {
+                    transform: translateY(9px) rotate(45deg);
+                }
+
+                60% {
+                    transform: translateY(9px) rotate(0);
+                }
+
+                85% {
+                    transform: translateY(9px) rotate(0);
+                }
+
+                100% {
+                    transform: translateY(0) rotate(0);
+                }
+            }
+
+            .menu-trigger span:nth-of-type(2) {
+                transition: all .25s .25s;
+                opacity: 1;
+            }
+
+            .menu-trigger span:nth-of-type(3) {
+                animation: menu-bar03 .5s forwards;
+            }
+
+            @keyframes menu-bar03 {
+                0% {
+                    transform: translateY(-9px) rotate(135deg);
+                }
+
+                60% {
+                    transform: translateY(-9px) rotate(0);
+                }
+
+                85% {
+                    transform: translateY(-9px) rotate(0);
+                }
+
+                100% {
+                    transform: translateY(0) rotate(0);
+                }
+            }
+
+            .menu-trigger.active span:nth-of-type(1) {
+                animation: active-menu-bar01 .5s forwards;
+            }
+
+            @keyframes active-menu-bar01 {
+                0% {
+                    transform: translateY(0) rotate(0);
+                }
+
+                70% {
+                    transform: translateY(9px) rotate(0);
+                }
+
+                85% {
+                    transform: translateY(9px) rotate(0);
+                }
+
+                100% {
+                    transform: translateY(9px) rotate(405deg);
+                }
+            }
+
+            .menu-trigger.active span:nth-of-type(2) {
+                opacity: 0;
+            }
+
+            .menu-trigger.active span:nth-of-type(3) {
+                animation: active-menu-bar03 .5s forwards;
+            }
+
+            @keyframes active-menu-bar03 {
+                0% {
+                    transform: translateY(0) rotate(0);
+                }
+
+                70% {
+                    transform: translateY(-9px) rotate(0);
+                }
+
+                85% {
+                    transform: translateY(-9px) rotate(0);
+                }
+
+                100% {
+                    transform: translateY(-9px) rotate(495deg);
+                }
+            }
+        }
+    }
+}
+
+
+main {
+    max-width: $pc;
+    margin: 0 auto;
+
+
+
+    #kv {
+        position: relative;
+        padding: 0 5.555556%;
+
+        @include sp {
+            padding: 29vw 0 0;
+        }
+
+        .posimg1 {
+            position: absolute;
+            z-index: 1;
+            width: 21.006944%;
+            top: -26.651982%;
+            left: 0;
+
+            @include sp {
+                display: none;
+            }
+        }
+
+        .posimg2 {
+            position: absolute;
+            z-index: 1;
+            top: 52%;
+            right: 3px;
+            left: unset;
+            width: 42.96875%;
+
+            @include sp{
+                top: 30vw;
+                right: unset;
+                width: 100%;
+            }
+
+        }
+
+        .mainvisual {
+            max-width: 1024px;
+            margin: 0 auto;
+            position: relative;
+
+
+        }
+    }
+
+    .text {
+        font-size: 24px;
+        margin: 5px 0;
+    }
+
+    // KVここまで
+    .latest {
+        h1 {
+            margin-top: 80px;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .la {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* padding-right: 80px; */
+            margin-bottom: 50px;
+
+            .article-wrap {
+                width: 320px;
+
+                &:hover {
+                    top: -3px;
+                    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+                }
+
+                p {
+                    padding: 5px 15px;
+                }
+
+                .readmore {
+                    text-align: right;
+                    padding: 100px 0 20px;
+                }
+
+                .readmore1 {
+                    text-align: right;
+                    padding: 78px 0 20px;
+                }
+
+            }
+        }
+
+    }
+
+}
