@@ -1,0 +1,72 @@
+.latest.article {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.la {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+
+    .article-wrap {
+        width: 320px;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        position: relative;
+
+        .readmore {
+            text-align: right;
+            padding: 80px 20px 0 0;
+        }
+        .readmore1 {
+            text-align: right;
+            padding: 58px 20px 0 0;
+        }
+    }
+    p {
+        padding: 10px 10px 0 10px;
+    }
+}
+.article-wrap:hover {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1);
+    border-color: transparent;
+}
+.article-wrap:after{
+    content: '';
+    position: absolute;
+    left: 94%;
+    bottom: 6px;
+    /*線の上下位置*/
+    display: inline-block;
+    width: 25px;
+    /*線の長さ*/
+    height: 1px;
+    /*線の太さ*/
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-100%);
+    /*位置調整*/
+    background-color: black;
+    /*線の色*/
+    border-radius: 2px;
+    /*線の丸み*/
+    transition: width 0.3s ease-in-out;
+}
+.article-wrap:hover:after{
+    width: 32%;
+}
+footer {
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 100px;
+}
+
