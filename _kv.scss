@@ -19,11 +19,11 @@ $col3: 30%;
 
 header {
     @include sp {
-        position: fixed;
+        position: sticky;
         z-index: 2;
         background-color: white;
         width: 100%;
-        border-bottom: ridge;
+
     }
 
     .logo {
@@ -110,9 +110,9 @@ header {
 
             .menu-trigger {
                 position: fixed;
-                top: 70px;
-                margin-right: 20px;
-                right: 10px;
+                top: 14vw;
+                margin-right: 5vw;
+                right: 1vw;
                 z-index: 2;
                 width: 24px;
                 height: 32px;
@@ -256,7 +256,7 @@ main {
         padding: 0 5.555556%;
 
         @include sp {
-            padding: 29vw 0 0;
+            padding: 0;
         }
 
         .posimg1 {
@@ -279,12 +279,17 @@ main {
             left: unset;
             width: 42.96875%;
 
-            @include sp{
-                top: 30vw;
+            @include sp {
+                top: 3vw;
                 right: unset;
                 width: 100%;
             }
 
+            img {
+                @include sp {
+                    width: 64.5vw;
+                }
+            }
         }
 
         .mainvisual {
@@ -299,50 +304,20 @@ main {
     .text {
         font-size: 24px;
         margin: 5px 0;
-    }
-
-    // KVここまで
-    .latest {
-        h1 {
-            margin-top: 80px;
-            font-size: 25px;
-            font-weight: bold;
-            margin-bottom: 50px;
+        @include sp{
             text-align: center;
+            font-size: 4vw;
         }
+        .br{
+            display: none;
 
-        .la {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            /* padding-right: 80px; */
-            margin-bottom: 50px;
-
-            .article-wrap {
-                width: 320px;
-
-                &:hover {
-                    top: -3px;
-                    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
-                }
-
-                p {
-                    padding: 5px 15px;
-                }
-
-                .readmore {
-                    text-align: right;
-                    padding: 100px 0 20px;
-                }
-
-                .readmore1 {
-                    text-align: right;
-                    padding: 78px 0 20px;
-                }
+            @include sp{
+                display: block;
 
             }
         }
-
     }
 
+    // KVここまで
+    
 }
