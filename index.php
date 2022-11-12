@@ -47,64 +47,96 @@
                 </picture>
             </div>
         </div>
-
         <p class='text'>進化し続ける「街」<br class="br">
             アメリカンビレッジマガジン
         </p>
-
         <div class='main-titile'>
             <section class='latest article'>
                 <h1>Latest Article</h1>
                 <div class='la'>
                     <div class='article-wrap'>
-                        <img src="<?php echo get_template_directory_uri();?>/img/post_img_1.png" alt="">
+                    <a href="">
+                        <div class="pic">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/post_img_1.png" alt="">
+                        </div>                        
                         <p>2018 / 5 / 20</p>
                         <p>おしゃれなカフェありますよ</p>
-
                         <div class='readmore'>
-                            <a href="">READ MORE</a>
+                             <div class='tr'>
+                               <span>READ MORE</span>
+                             </div>
                         </div>
-
+                        </a>
                     </div>
                     <div class='article-wrap'>
-                        <img src="<?php echo get_template_directory_uri();?>/img/post_img_2.png" alt="">
+                        <a href="">
+                            <div class="pic">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/post_img_2.png" alt="">
+                            </div>
                         <p>2018 / 5 / 19</p>
                         <p>あのネオンはいつ交換するのか！？観覧車の謎に迫る！</p>
                         <div class='readmore1'>
-                            <a class="" href="">READ MORE</a>
+                             <div class='tr'>
+                               <span>READ MORE</span>
+                             </div>
                         </div>
+                        </a>
                     </div>
                     <div class='article-wrap'>
-                        <img src="<?php echo get_template_directory_uri();?>/img/post_img_3.png" alt="">
+                        <a href="">
+                           <div class="pic">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/post_img_3.png" alt="">
+                            </div>
                         <p>2018 / 5 / 18</p>
                         <p>ラソナの社内はこんなのよ</p>
                         <div class='readmore'>
-                            <a href="">READ MORE</a>
+                             <div class='tr'>
+                               <span>READ MORE</span>
+                             </div>
                         </div>
+                        </a>
                     </div>
                     <div class='article-wrap'>
-                        <img src="<?php echo get_template_directory_uri();?>/img/post_img_4.png" alt="">
+                        <a href="">
+                            <div class='pic'>
+                                <img src="<?php echo get_template_directory_uri();?>/img/post_img_4.png" alt="">
+                            </div>                     
                         <p>2018 / 5 / 27</p>
                         <p>お隣のアラハはハワイ？</p>
                         <div class='readmore'>
-                            <a href="">READ MORE</a>
+                             <div class='tr'>
+                               <span>READ MORE</span>
+                             </div>
                         </div>
+                        </a>
                     </div>
                     <div class='article-wrap'>
-                        <img src="<?php echo get_template_directory_uri();?>/img/post_img_5.png" alt="">
+                         <a href="">
+                             <div class='pic'>
+                                  <img src="<?php echo get_template_directory_uri();?>/img/post_img_5.png" alt="">
+                             </div>                   
                         <p>2018 / 5 / 16</p>
                         <p>なぜテント？ラソナの人に聞いてみた</p>
                         <div class='readmore'>
-                            <a href="">READ MORE</a>
+                             <div class='tr'>
+                               <span>READ MORE</span>
+                             </div>
                         </div>
+                        </a>
                     </div>
                     <div class='article-wrap'>
-                        <img src="<?php echo get_template_directory_uri();?>/img/post_img_6.png" alt="">
+                        <a href="">
+                             <div class='pic'>
+                                   <img src="<?php echo get_template_directory_uri();?>/img/post_img_6.png" alt="">
+                             </div>          
                         <p>2018 / 5 / 15</p>
                         <p>ベイエリアおしゃれすぎる問題</p>
                         <div class='readmore'>
-                            <a href="">READ MORE</a>
+                             <div class='tr'>
+                               <span>READ MORE</span>
+                             </div>
                         </div>
+                        </a>
                     </div>
                 </div>
             </section>

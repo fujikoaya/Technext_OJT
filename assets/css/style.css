@@ -250,70 +250,60 @@ main .text .br {
     display: block;
   }
 }
-
-.latest.article {
+main .latest.article {
   max-width: 1024px;
   margin: 0 auto;
 }
 @media screen and (max-width: 767px) {
-  .latest.article {
+  main .latest.article {
     width: 80%;
     margin: 0 auto;
   }
 }
-
-h1 {
+main h1 {
   text-align: center;
   font-size: 25px;
   font-weight: bold;
 }
-
-.la {
+main .la {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 50px;
 }
 @media screen and (max-width: 767px) {
-  .la {
+  main .la {
     display: block;
   }
 }
-.la .article-wrap {
+main .article-wrap {
   width: 320px;
   margin-bottom: 30px;
   padding-bottom: 10px;
   position: relative;
 }
+main .article-wrap .pic img {
+  width: 100%;
+}
 @media screen and (max-width: 767px) {
-  .la .article-wrap {
+  main .article-wrap {
     width: 100%;
   }
 }
-.la .article-wrap .pic img {
-  width: 100%;
-}
-.la .article-wrap .readmore {
-  text-align: right;
-  padding: 150px 20px 0 0;
-}
-.la .article-wrap .tr {
+main .tr {
   position: relative;
-  width: 102px;
 }
-.la .article-wrap .tr:after {
+main .tr:after {
   content: "";
   position: absolute;
-  left: 102px;
-  bottom: 5px;
+  right: 0;
+  bottom: -1px;
   /*線の上下位置*/
   display: inline-block;
   width: 25px;
   /*線の長さ*/
   height: 1px;
   /*線の太さ*/
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-100%);
   /*位置調整*/
   background-color: black;
   /*線の色*/
@@ -321,20 +311,24 @@ h1 {
   /*線の丸み*/
   transition: width 0.3s ease-in-out;
 }
-.la .article-wrap .tr:hover:after {
-  width: 102px;
-}
-.la .article-wrap .readmore1 {
-  text-align: right;
-  padding: 120px 20px 0 0;
-}
-.la p {
+main p {
   padding: 10px 10px 0 10px;
+}
+main .readmore {
+  text-align: right;
+  padding: 150px 10px 0 0;
+}
+main .readmore1 {
+  text-align: right;
+  padding: 130px 10px 0 0;
 }
 
 .article-wrap:hover {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1);
   border-color: transparent;
+}
+.article-wrap:hover .tr:after {
+  width: 102px;
 }
 
 footer {
