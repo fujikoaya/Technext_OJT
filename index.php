@@ -8,21 +8,62 @@
                 <!-- mediaの中にレスポシブサイズを記入 -->
                 <img src="<?php echo get_template_directory_uri();?>/img/visual_text_pc.png" alt="">
             </picture>
-            <div class="mainvisual">
-                <!-- <img class="posimg1" src="./img/logo.png" alt=""> -->
-                <picture>
-                    <source srcset="<?php echo get_template_directory_uri();?>/img/visual_1_sp.png" media='(max-width: 767px)'>
-                    <!-- mediaの中にレスポシブサイズを記入 -->
+             <div class="mainvisual slide">
+            <div class='pcimg'>
+               <?php
+                echo do_shortcode('[smartslider3 slider="2"]');
+                ?>
+             </div>
+             <div class='spimg'>
+                <?php
+                echo do_shortcode('[smartslider3 slider="3"]');
+                ?>
+            </div>
+           
+                <!-- <picture class="item">
+                    <source srcset="<?php //echo get_template_directory_uri(); ?>/img/visual_1_sp.png" media='(max-width: 767px)'>
                     
-                    <img src="<?php header_image(); ?>" alt="">
+                    <img src="<?php //echo get_template_directory_uri(); ?>/img/visual_1_pc.png" alt="">
+                </picture>
+                <picture class="item">
+                    <source srcset="<?php //echo get_template_directory_uri(); ?>/img/visual_2_sp.png" media='(max-width: 767px)'>
+                    
+                    <img src="<?php //echo get_template_directory_uri(); ?>/img/visual_2_pc.png" alt="">
+                </picture>
+                <picture class="item">
+                    <source srcset="<?php //echo get_template_directory_uri(); ?>/img/visual_3_sp.png" media='(max-width: 767px)'>
+                    
+                    <img src="<?php //echo get_template_directory_uri(); ?>/img/visual_3_pc.png" alt="">
+                </picture> -->
+            </div>
+
+            <!-- <ul class="slide">
+                <li class="item">
+                    <img src="<?php //echo get_template_directory_uri(); ?>/img/visual_1_pc.png" />
+                </li>
+                <li class="item">
+                    <img src="<?php //echo get_template_directory_uri(); ?>/img/visual_3_pc.png" />
+                </li>
+                <li class="item">
+                    <img src="<?php //echo get_template_directory_uri(); ?>/img/visual_2_pc.png" />
+                </li>
+                
+            </ul> -->
+            <!-- <div class="mainvisual">
+                
+                <picture>
+                    <source srcset="<?php //echo get_template_directory_uri();?>/img/visual_1_sp.png" media='(max-width: 767px)'>
+                    
+                    
+                    <img src="<?php //header_image(); ?>" alt="">
                     
                 </picture>
-            </div>
+            </div> -->
         </div>
         <p class='text'>進化し続ける「街」<br class="br">
             アメリカンビレッジマガジン
         </p>
-        <div class='main-titile'>
+        <div class='main-title'>
             <section class='latest article'>
                 <h1>Latest Article</h1>
                 <div class='la'>
@@ -130,7 +171,8 @@
         </div>
         <div class="more">
             <button>
-                もっと記事を見る
+                <p> もっと記事を見る</p>
+                <!-- <span class="plus"></span> -->
             </button>
         </div>
 

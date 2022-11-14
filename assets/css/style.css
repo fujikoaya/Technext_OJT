@@ -234,6 +234,19 @@ main #kv .mainvisual {
   margin: 0 auto;
   position: relative;
 }
+@media screen and (max-width: 767px) {
+  main #kv .mainvisual .pcimg {
+    display: none;
+  }
+}
+main #kv .slick-slider {
+  margin: 0;
+  padding: 0;
+}
+main #kv .slick-slider picture {
+  width: 100%;
+  height: 100%;
+}
 main .text {
   font-size: 24px;
   margin: 5px 0;
@@ -256,6 +269,9 @@ main .text .br {
   main .text .br {
     display: block;
   }
+}
+main .main-title {
+  margin-top: 100px;
 }
 main .latest.article {
   max-width: 1024px;
@@ -289,6 +305,9 @@ main .article-wrap {
   padding-bottom: 10px;
   position: relative;
 }
+main .article-wrap p {
+  padding: 10px 10px 0 10px;
+}
 main .article-wrap .pic img {
   width: 100%;
 }
@@ -318,9 +337,6 @@ main .tr:after {
   /*線の丸み*/
   transition: width 0.3s ease-in-out;
 }
-main p {
-  padding: 10px 10px 0 10px;
-}
 main .readmore {
   text-align: right;
   padding: 150px 10px 0 0;
@@ -341,7 +357,6 @@ main .readmore1 {
 .more {
   text-align: center;
   padding-top: 15px;
-  cursor: pointer;
   position: relative;
   padding-bottom: 15px;
 }
@@ -351,14 +366,9 @@ main .readmore1 {
   background: none;
   cursor: pointer;
 }
-.more button::after {
-  color: #2165c0;
-  position: relative;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 1em;
-  content: "\f055";
-  padding-left: 10px;
+.more button p {
+  border: solid 1px;
+  padding: 20px;
 }
 
 /* もっと見るの非表示 */
@@ -377,4 +387,10 @@ footer {
   text-align: center;
   padding: 50px 0;
   margin-top: 100px;
+}
+
+@media screen and (min-width: 767px) {
+  .spimg {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
