@@ -1,0 +1,25 @@
+.more{
+    text-align: center;
+    padding-top: 15px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.more button{
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+   
+}
+
+.more button:after {
+    color: #2165c0;
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1em;
+    content: "\f055";
+    padding-left: 10px;
+}

@@ -2,9 +2,11 @@
 @media screen and (max-width: 767px) {
   header {
     position: sticky;
+    top: 0;
     z-index: 2;
     background-color: white;
     width: 100%;
+    padding: 5px;
   }
 }
 header .logo {
@@ -14,19 +16,19 @@ header .logo {
   header .logo {
     display: block;
     width: 25%;
-    margin: 10px auto;
+    margin: 0px auto;
     z-index: 3;
   }
 }
 header .logo img {
   width: 100%;
 }
-header .nav .nav-list {
+header .nav .menu {
   display: flex;
   justify-content: end;
   padding: 70px 0;
 }
-header .nav .nav-item {
+header .nav .menu-item {
   padding-right: 50px;
 }
 
@@ -40,7 +42,7 @@ header .nav .nav-item {
     /* ハンバーガーアニメーション */
     /* ここからハンバーガーメニューのアニメーション */
   }
-  header .nav .nav-list {
+  header .nav .menu {
     position: fixed;
     top: 0;
     right: 0;
@@ -54,7 +56,7 @@ header .nav .nav-item {
     background: white;
     opacity: 0;
   }
-  header .nav .nav-item {
+  header .nav .menu-item {
     width: 100%;
     height: auto;
     padding: 0.5em 1em;
@@ -62,11 +64,11 @@ header .nav .nav-item {
     color: black;
     box-sizing: border-box;
   }
-  header .nav .nav-list {
+  header .nav .menu {
     transform: translateX(-100vw);
     transition: all 0.3s linear;
   }
-  header .nav .nav-list.is-active {
+  header .nav .menu.is-active {
     transform: translateY(0);
     opacity: 90%;
   }
@@ -236,6 +238,11 @@ main .text {
   font-size: 24px;
   margin: 5px 0;
 }
+@media screen and (max-width: 1000px) {
+  main .text {
+    font-size: 18px;
+  }
+}
 @media screen and (max-width: 767px) {
   main .text {
     text-align: center;
@@ -329,6 +336,38 @@ main .readmore1 {
 }
 .article-wrap:hover .tr:after {
   width: 102px;
+}
+
+.more {
+  text-align: center;
+  padding-top: 15px;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 15px;
+}
+.more button {
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.more button::after {
+  color: #2165c0;
+  position: relative;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1em;
+  content: "\f055";
+  padding-left: 10px;
+}
+
+/* もっと見るの非表示 */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  margin: 0 10px;
+  padding: 0;
 }
 
 footer {

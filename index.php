@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/reset.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/style.css">
-    <title>OJT</title>
-</head>
-
-<body>
-    <header> 
-        <div class=logo><img src="<?php echo get_template_directory_uri();?>/img/logo.png" alt=""></div>
-        <nav class="nav">
-            
-            <button type="button" class="menu-trigger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#">Menu01</a></li>
-                <li class="nav-item"><a href="#">Meun02</a></li>
-                <li class="nav-item"><a href="#">Meun03</a></li>
-                <li class="nav-item"><a href="#">Meun04</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php get_header();?>
     <main>
 
         <div id="kv">
@@ -43,7 +13,9 @@
                 <picture>
                     <source srcset="<?php echo get_template_directory_uri();?>/img/visual_1_sp.png" media='(max-width: 767px)'>
                     <!-- mediaの中にレスポシブサイズを記入 -->
-                    <img src="<?php echo get_template_directory_uri();?>/img/visual_1_pc.png" alt="">
+                    
+                    <img src="<?php header_image(); ?>" alt="">
+                    
                 </picture>
             </div>
         </div>
@@ -54,17 +26,17 @@
             <section class='latest article'>
                 <h1>Latest Article</h1>
                 <div class='la'>
-                    <div class='article-wrap'>
-                    <a href="">
-                        <div class="pic">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/post_img_1.png" alt="">
-                        </div>                        
+                    <!-- <div class='article-wrap'>
+                        <a href="">
+                            <div class="pic">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/post_img_1.png" alt="">
+                            </div>                        
                         <p>2018 / 5 / 20</p>
                         <p>おしゃれなカフェありますよ</p>
                         <div class='readmore'>
-                             <div class='tr'>
-                               <span>READ MORE</span>
-                             </div>
+                                <div class='tr'>
+                                    <span>READ MORE</span>
+                                </div>
                         </div>
                         </a>
                     </div>
@@ -123,14 +95,19 @@
                              </div>
                         </div>
                         </a>
-                    </div>
+                    </div> -->
+                    <?php 
+                    if(have_posts()):
+                    while(have_posts()):
+                        the_post();
+                    ?>
                     <div class='article-wrap'>
-                        <a href="">
+                        <a href="<?php echo get_template_directory_uri();?>/blog.php">
                              <div class='pic'>
-                                   <img src="<?php echo get_template_directory_uri();?>/img/post_img_6.png" alt="">
+                                   <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="">
                              </div>          
-                        <p>2018 / 5 / 15</p>
-                        <p>ベイエリアおしゃれすぎる問題</p>
+                        <p><?php  the_time('Y/m/d');?></p>
+                        <p><?php the_title();?></p>
                         <div class='readmore'>
                              <div class='tr'>
                                <span>READ MORE</span>
@@ -138,16 +115,24 @@
                         </div>
                         </a>
                     </div>
-                </div>
+                    
+                    <?php 
+                    endwhile;
+                    else:
+                    ?>
+                    <section class="container-wrap" id="htmlcss">
+                    <h2 class="subtitle">表示する投稿がありません</h2>
+                    </section>
+                    <?php endif; ?>
+                    
+                    </div>
             </section>
+        </div>
+        <div class="more">
+            <button>
+                もっと記事を見る
+            </button>
         </div>
 
     </main>
-    <footer>
-        Copyright <span>&copy</span>Shinohara.ALL RIGHTS RESERVED.</footer>
-
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-        <script src='<?php echo get_template_directory_uri();?>/script.js'></script>
-</body>
-
-</html>
+   <?php get_footer(); ?>

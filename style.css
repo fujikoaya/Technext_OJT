@@ -1,0 +1,22 @@
+input,textarea{
+    width: 100%;
+    display: block;
+    margin: 10px auto;
+}
+
+form{
+    width: 500px;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.submitBtn{
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
